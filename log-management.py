@@ -18,10 +18,11 @@ def main():
         choice = str(
             input("Please enter the name of the text file that you wish to view: \n")
         )
-        with open(str(choice), "r") as log_file:
-            log_data = log_file.read().split("\n")
-            print(log_data)
-        if choice not in list_of_files:
+        if choice in list_of_files:
+            with open(str(choice), "r") as log_file:
+                log_data = log_file.read().split("\n")
+                print(log_data)
+        else:
             print("\n\t\t\tYour choice has not been recognised\n")
             main()
     except ValueError:
