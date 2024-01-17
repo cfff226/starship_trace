@@ -9,5 +9,12 @@ def main():
     for i in range(len(list_of_files)):
         print(str(i + 1) + ". " + list_of_files[i])
     print("\n----------------------------------------------------------------------------------\n")
+    try:
+        choice = str(input("Please enter the name of the text file that you wish to view: "))
+        if choice not in list_of_files:
+            print("Your choice has not been recognised")
+            main()
+    except ValueError:
+        print("You have entered an incorrect value")
    
 main()
